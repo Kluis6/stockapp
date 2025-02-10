@@ -13,11 +13,9 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="PT-BR">
-      <body className={`relative`}>
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <>
+      <Navbar />
+      {children}
+    </>
   );
 }
