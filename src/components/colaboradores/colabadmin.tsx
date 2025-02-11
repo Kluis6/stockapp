@@ -8,7 +8,6 @@ import {
   BsTrashFill,
   BsWhatsapp,
   BsX,
-  BsXLg,
 } from "react-icons/bs";
 
 export default function Colabadmin() {
