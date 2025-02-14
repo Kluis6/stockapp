@@ -40,101 +40,113 @@ export default function AdminStock() {
             <section className="flex flex-row justify-start items-center ease-in transition-all duration-300 even:border-r-4 even:border-red-600">
               <button
                 type="button"
-                className={`border-t-2 border-solid w-3/4 p-2 font-bold text-sm ${ activeTab === 0 ? ' border-blue-700 bg-neutral-50 text-neutral-800' : 'bg-neutral-400 border-neutral-400 text-neutral-700'}`}
+                className={`border-t-2 border-solid w-3/4 p-2 font-bold text-sm ${
+                  activeTab === 0
+                    ? " border-blue-700 bg-neutral-50 text-neutral-800"
+                    : "bg-neutral-400 border-neutral-400 text-neutral-700"
+                }`}
                 onClick={() => handleTabClick(0)}
               >
                 Geral
               </button>
               <button
                 type="button"
-                className={`border-t-2 border-solid w-3/4 p-2 font-bold text-sm ${ activeTab === 1 ? ' border-blue-700 bg-neutral-50 text-neutral-800' : 'bg-neutral-400 border-neutral-400 text-neutral-700'}`}
-
+                className={`border-t-2 border-solid w-3/4 p-2 font-bold text-sm ${
+                  activeTab === 1
+                    ? " border-blue-700 bg-neutral-50 text-neutral-800"
+                    : "bg-neutral-400 border-neutral-400 text-neutral-700"
+                }`}
                 onClick={() => handleTabClick(1)}
               >
                 Serviço
               </button>
               <button
                 type="button"
-                className={`border-t-2 w-3/4 p-2 border-solid font-bold text-sm ${ activeTab === 2 ? ' border-blue-700 bg-neutral-50 text-neutral-800' : 'bg-neutral-400 border-neutral-400 text-neutral-700'}`}
-
+                className={`border-t-2 w-3/4 p-2 border-solid font-bold text-sm ${
+                  activeTab === 2
+                    ? " border-blue-700 bg-neutral-50 text-neutral-800"
+                    : "bg-neutral-400 border-neutral-400 text-neutral-700"
+                }`}
                 onClick={() => handleTabClick(2)}
               >
                 Avariados
               </button>
             </section>
             <section className="p-4 bg-neutral-50 w-full h-full ">
-              {activeTab === 0 && <p>Conteúdo da Aba 1</p>}
+              {activeTab === 0 && (
+                <div className="space-y-4">
+                  <section className="flex flex-row justify-between items-center">
+                    <div className="flex flex-row gap-2 relative items-center justify-start w-full">
+                      <BsSearch className=" absolute  text-base text-neutral-800 left-2" />
+                      <input
+                        type="text"
+                        placeholder="Pesquisar"
+                        className="border-b w-2/5  bg-neutral-100 transition-all py-2 ps-8  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                      />
+                    </div>
+                  </section>
+                  <section className="">
+                    <div className="flex flex-row justify-between items-center ">
+                      <span className="text-sm text-bold text-neutral-900">
+                        Nome
+                      </span>
+                      <span className="text-sm text-medium text-neutral-900">
+                        Quantidade
+                      </span>
+                      <span className="text-sm text-medium text-neutral-900">
+                        Atualizalção
+                      </span>
+
+                      <span className="text-sm text-medium text-neutral-900">
+                        Editar
+                      </span>
+                    </div>
+                    <ul className="flex flex-col gap-1 divide-y">
+                      <li className="flex flex-row justify-between items-center py-2">
+                        <div className="flex flex-row justify-start items-center ">
+                          <p className="text-sm font-bold text-neutral-950">
+                            Nome
+                          </p>
+                        </div>
+                        <div className=" flex justify-center items-center gap-2">
+                          <BsWhatsapp className="text-green-900 text-base" />
+                          <p className="font-bold text-sm">21 90000-0000</p>
+                        </div>
+                        <div className="">
+                          <p className="text-sm font-bold">Tecnico</p>
+                        </div>
+
+                        <div className=" flex justify-center items-center gap-2">
+                          <button
+                            type="button"
+                            className="bg-red-600 hover:bg-red-700 active:bg-red-800 p-2 transition-all"
+                            onClick={() => handleModal(1)}
+                          >
+                            <BsTrashFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                          </button>
+                          <button
+                            type="button"
+                            className="bg-green-600 hover:bg-green-700 active:bg-green-800 p-2 transition-all"
+                            onClick={() => handleModal(2)}
+                          >
+                            <BsInfoLg className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                          </button>
+                          <button
+                            type="button"
+                            className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 p-2 transition-all"
+                            onClick={() => handleModal(3)}
+                          >
+                            <BsPencilFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                          </button>
+                        </div>
+                      </li>
+                    </ul>
+                  </section>
+                </div>
+              )}
               {activeTab === 1 && <p>Conteúdo da Aba 2</p>}
               {activeTab === 2 && <p>Conteúdo da Aba 3</p>}
             </section>
-
-            <div className="space-y-4">
-              <section className="flex flex-row justify-between items-center">
-                <div className="flex flex-row gap-2 relative items-center justify-start w-full">
-                  <BsSearch className=" absolute  text-base text-neutral-800 left-2" />
-                  <input
-                    type="text"
-                    placeholder="Pesquisar"
-                    className="border-b w-2/5  bg-neutral-100 transition-all py-2 ps-8  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
-                  />
-                </div>
-              </section>
-              <section className="">
-                <div className="flex flex-row justify-between items-center ">
-                  <span className="text-sm text-bold text-neutral-900">
-                    Nome
-                  </span>
-                  <span className="text-sm text-medium text-neutral-900">
-                    Quantidade
-                  </span>
-                  <span className="text-sm text-medium text-neutral-900">
-                    Atualizalção
-                  </span>
-
-                  <span className="text-sm text-medium text-neutral-900">
-                    Editar
-                  </span>
-                </div>
-                <ul className="flex flex-col gap-1 divide-y">
-                  <li className="flex flex-row justify-between items-center py-2">
-                    <div className="flex flex-row justify-start items-center ">
-                      <p className="text-sm font-bold text-neutral-950">Nome</p>
-                    </div>
-                    <div className=" flex justify-center items-center gap-2">
-                      <BsWhatsapp className="text-green-900 text-base" />
-                      <p className="font-bold text-sm">21 90000-0000</p>
-                    </div>
-                    <div className="">
-                      <p className="text-sm font-bold">Tecnico</p>
-                    </div>
-
-                    <div className=" flex justify-center items-center gap-2">
-                      <button
-                        type="button"
-                        className="bg-red-600 hover:bg-red-700 active:bg-red-800 p-2 transition-all"
-                        onClick={() => handleModal(1)}
-                      >
-                        <BsTrashFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
-                      </button>
-                      <button
-                        type="button"
-                        className="bg-green-600 hover:bg-green-700 active:bg-green-800 p-2 transition-all"
-                        onClick={() => handleModal(2)}
-                      >
-                        <BsInfoLg className="text-neutral-50 active:scale-75 ease-out duration-300" />
-                      </button>
-                      <button
-                        type="button"
-                        className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 p-2 transition-all"
-                        onClick={() => handleModal(3)}
-                      >
-                        <BsPencilFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
-                      </button>
-                    </div>
-                  </li>
-                </ul>
-              </section>
-            </div>
           </div>
         </div>
       </div>
