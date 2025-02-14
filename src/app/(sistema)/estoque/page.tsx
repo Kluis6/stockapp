@@ -1,3 +1,5 @@
+import AdminStock from "@/components/estoque/adminstock";
+
 export default function Estoque() {
   return (
     <div className="w-full ps-[3rem]">
@@ -5,6 +7,7 @@ export default function Estoque() {
         <h1 className="text-sm font-medium">Estoque</h1>
         <p className="text-xs">Aqui você pode organizar todos os produtos.</p>
       </div>
+      <AdminStock />
     </div>
   );
 }

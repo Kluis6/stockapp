@@ -1,14 +1,11 @@
 import Link from "next/link";
 
-export default function Login() {
+export default function Home() {
   return (
-    <div className="flex justify-center items-center h-screen">
-      login
-      <section className="p-4">
-        <nav>
-          <Link href={"painel"}> user</Link>
-        </nav>
-      </section>
+    <div className=" w-full h-screen bg-amber-300 flex justify-center items-center">
+      <div className="flex gap-2">
+        <Link href={"painel"}>painel</Link>
+      </div>
     </div>
   );
 }
