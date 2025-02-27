@@ -1,4 +1,4 @@
-import ColabAdmin from "@/components/colaboradores/colabadmin";
+import ColabAdmin from "@/components/usuarios/colabadmin";
 export default function Colaboradores() {
   return (
     <div className="w-full ps-[3rem]">

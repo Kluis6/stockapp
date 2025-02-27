@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Painelinfo() {
   return (
     <div className="w-full h-full">

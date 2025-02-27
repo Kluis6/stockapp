@@ -64,14 +64,14 @@ export default function Navbar() {
             )}
           </Link>
           <Link
-            href="colaboradores"
+            href="usuarios"
             className={`w-full h-full active:bg-neutral-400 relative transition-all hover:bg-neutral-300 p-2 text-neutral-900`}
             onMouseOver={() => handleTooltips(4)}
             onMouseOut={() => handleTooltips(0)}
           >
             {tooltips === 4 && (
               <span className="absolute top-0 -right-[6.5rem] shadow text-white bg-neutral-600 font-sans  p-2 text-xs font-bold ">
-                Colaboradores
+                Usuários
               </span>
             )}
             <BsFillPersonFill className="text-base active:scale-75 ease-out duration-300" />
