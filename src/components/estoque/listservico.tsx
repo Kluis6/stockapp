@@ -1,6 +1,12 @@
 "use client";
 import { useState } from "react";
-import { BsSearch, BsX } from "react-icons/bs";
+import {
+  BsArrowLeftSquareFill,
+  BsInfoLg,
+  BsPencilFill,
+  BsSearch,
+  BsX,
+} from "react-icons/bs";
 
 export default function ListServico() {
   const [modal, setModal] = useState<number>(0);
@@ -24,10 +30,11 @@ export default function ListServico() {
         <table className="table-fixed w-full  border-spacing-2">
           <thead className="">
             <tr className="text-neutral-800 text-xs bg-neutral-300">
-              <th className="py-3">Equipemento</th>
+              <th className="py-3">Equipamento</th>
               <th>Quantidade</th>
               <th>Requerido em:</th>
               <th>Usuário</th>
+              <th>Editar</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-neutral-300 w-full">
@@ -51,6 +58,30 @@ export default function ListServico() {
                   nome usuario
                 </p>
               </td>
+              <td className=" space-x-2 text-center py-1">
+                <button
+                  type="button"
+                  className="bg-orange-600 hover:bg-orange-700 active:bg-orange-800 p-2 transition-all"
+                  onClick={() => handleModal(2)}
+                >
+                  <BsArrowLeftSquareFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                </button>
+
+                <button
+                  type="button"
+                  className="bg-green-600 hover:bg-green-700 active:bg-green-800 p-2 transition-all"
+                  onClick={() => handleModal(2)}
+                >
+                  <BsInfoLg className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                </button>
+                <button
+                  type="button"
+                  className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 p-2 transition-all"
+                  onClick={() => handleModal(3)}
+                >
+                  <BsPencilFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
+                </button>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -71,9 +102,9 @@ export default function ListServico() {
                 <BsX className=" text-xl text-neutral-800" />
               </button>
             </div>
-            <article className="px-4">
+            <article className="px-4 text-center">
               <h4>Excluir esse produto</h4>
-              <p>Tem certeza que deseja excluir o equipamento?</p>s
+              <p>Tem certeza que deseja excluir o equipamento?</p>
             </article>
 
             <div className="flex flex-row">

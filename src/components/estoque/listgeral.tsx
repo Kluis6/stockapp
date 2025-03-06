@@ -30,8 +30,9 @@ export default function ListGeral() {
         <table className="table-fixed w-full  border-spacing-2">
           <thead className="">
             <tr className="text-neutral-800 text-xs bg-neutral-300">
-              <th className="py-3">Nome</th>
+              <th className="py-3">Equipamento</th>
               <th>Quantidade</th>
+              <th className="py-3">Categoria</th>
               <th>Atualização</th>
               <th>Editar</th>
             </tr>
@@ -39,10 +40,13 @@ export default function ListGeral() {
           <tbody className="divide-y divide-neutral-300 w-full">
             <tr className="bg-neutral-100 hover:bg-neutral-200">
               <th className="text-sm  text-neutral-700 font-medium px-2 line-clamp-1">
-                nome produto sdsds dsdsdsdsdsds
+                nome produto sdsds
               </th>
               <td className="text-center text-sm font-medium text-neutral-700 px-2">
                 20
+              </td>
+              <td className="text-center text-sm font-medium text-neutral-700 px-2 ">
+                Eletronicos
               </td>
               <td className="text-center text-sm font-medium text-neutral-700 px-2 ">
                 15/01/25
@@ -80,19 +84,23 @@ export default function ListGeral() {
       {/* modal exclusão */}
       {modal === 1 && (
         <div className="top-0 left-0 absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
-          <div className="bg-neutral-200 shadow flex flex-col gap-4">
+          <div className="bg-neutral-200 shadow flex flex-col">
             <div className="flex justify-end items-end">
               <button
                 type="button"
                 className="p-4 hover:bg-neutral-300 "
                 onClick={() => handleModal(0)}
               >
-                <BsX className=" text-xl text-neutral-800" />
+                <BsX className="text-xl text-neutral-800" />
               </button>
             </div>
-            <article className="px-4">
-              <h4>Excluir esse produto</h4>
-              <p>Tem certeza que deseja excluir o equipamento?</p>s
+            <article className="px-4 mb-8 space-y-1">
+              <h4 className="text-sm font-normal text-neutral-700">
+                Remover Equipamento
+              </h4>
+              <p className="font-medium text-base text-neutral-900">
+                Tem certeza que deseja remover o nome do equipamento?
+              </p>
             </article>
 
             <div className="flex flex-row">
@@ -108,35 +116,41 @@ export default function ListGeral() {
       )}
       {modal === 2 && (
         <div className="top-0 left-0  absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
-          <div className="bg-neutral-200 shadow flex flex-col gap-4 w-2/5">
-            <div className="flex justify-end items-end">
+          <div className="bg-neutral-200 shadow flex flex-col w-2/5">
+            <div className="flex flex-row justify-end items-end">
               <button
                 type="button"
                 className="p-4 hover:bg-neutral-300 "
                 onClick={() => handleModal(0)}
               >
-                <BsX className=" text-xl text-neutral-800" />
+                <BsX className="text-xl text-neutral-800" />
               </button>
             </div>
-            <article className="px-4 pb-4">
-              <div className="flex flex-row gap-2 items-center justify-start">
-                <div className="w-full">
-                  <div className="flex flex-row items-center justify-between ">
-                    <h3 className="font-medium text-neutral-900">
-                      Nome usuário
-                    </h3>
-                    <span className="bg-green-400 px-4 py-1 rounded-2xl">
-                      <p className="font-bold text-xs text-green-800">Ativo</p>
-                    </span>
-                  </div>
-                  <p>Telefone</p>
-                  <p>Função</p>
-                  <p>
-                    Pedidos: <strong>30</strong>{" "}
-                  </p>
-                </div>
+            <article className="px-4 mb-8 space-y-1">
+              <h4 className="text-sm font-normal text-neutral-700">
+                Informações do Equipamento
+              </h4>
+              <div className="flex flex-row justify-between items-center">
+                <p className="font-medium text-base text-neutral-900">
+                  Nome do equipamento
+                </p>
+                <span className="flex flex-row justify-center items-center bg-green-300 px-2 py-1 rounded-full">
+                  <p className="font-medium text-xs text-green-800">Em uso</p>
+                </span>
               </div>
+              <p className="text-sm text-neutral-800">Telefone</p>
+              <p className="text-sm text-neutral-800">Função</p>
+              <p className="text-sm text-neutral-800">Data de Atualização:</p>
+              <p className="text-sm text-neutral-800">
+                Quantidade:
+                <strong> 20</strong>
+              </p>
             </article>
+            <div className="flex flex-row">
+              <button className="w-full text-white p-4 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-900 text-sm flex justify-start items-center">
+                Fechar
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -154,7 +168,6 @@ export default function ListGeral() {
             </div>
             <section className="px-4">
               <div className="flex flex-row gap-2 items-start justify-start">
-            
                 <div className="w-full flex flex-col gap-1">
                   <label htmlFor="Nome">Nome</label>
                   <input

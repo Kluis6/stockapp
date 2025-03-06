@@ -1,12 +1,6 @@
 "use client";
 import { useState } from "react";
-import {
-  BsInfoLg,
-  BsPencilFill,
-  BsSearch,
-  BsTrashFill,
-  BsX,
-} from "react-icons/bs";
+import { BsInfoLg, BsPencilFill, BsSearch, BsX } from "react-icons/bs";
 
 export default function ListAvaria() {
   const [modal, setModal] = useState<number>(0);
@@ -39,7 +33,7 @@ export default function ListAvaria() {
           <tbody className="divide-y divide-neutral-300 w-full">
             <tr className="bg-neutral-100 hover:bg-neutral-200">
               <th className="text-sm  text-neutral-700 font-medium py-4 line-clamp-1">
-                nome produto sdsds dsdsdsdsdsds
+                nome produto sdsds ds
               </th>
               <td className="text-center text-sm font-medium text-neutral-700 px-2">
                 15/01/25
