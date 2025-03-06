@@ -92,36 +92,137 @@ export default function AdminStock() {
                 <BsX className=" text-xl text-neutral-800" />
               </button>
             </div>
+
             <section className="px-4">
-              <div className="flex flex-row gap-2 items-start justify-start">
-                <div className="size-32 flex-none">
-                  <div className="w-full h-full bg-amber-600 rounded-full flex items-center flex-row  justify-center"></div>
+              <h4 className="text-base font-medium text-neutral-700 mb-4">
+                Cadastro de equipamento
+              </h4>
+              <div className="grid grid-cols-12 gap-2">
+                <div className="col-span-12">
+                  <div className="flex flex-col space-y-1">
+                    <label className="text-sm text-neutral-800" htmlFor="Nome">
+                      Nome do equipamento
+                    </label>
+                    <input
+                      id="nome"
+                      type="text"
+                      className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    />
+                  </div>
                 </div>
-                <div className="w-full flex flex-col gap-1">
-                  <label htmlFor="Nome">Nome</label>
-                  <input
-                    id="nome"
-                    type="text"
-                    className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
-                  />
-                  <label htmlFor="senha">Senha</label>
-                  <input
-                    id="senha"
-                    type="text"
-                    className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
-                  />
-                  <label htmlFor="tel">Telefone</label>
-                  <input
-                    id="tel"
-                    type="text"
-                    className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
-                  />
-                  <label htmlFor="função">Função</label>
-                  <input
-                    id="função"
-                    type="text"
-                    className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
-                  />
+                <div className="col-span-6">
+                  <div className="flex flex-col space-y-1">
+                    <label className="text-sm text-neutral-800" htmlFor="senha">
+                      Categoria
+                    </label>
+                    <input
+                      id="senha"
+                      type="text"
+                      className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-6">
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      className="text-sm text-neutral-800"
+                      htmlFor="quantidade"
+                    >
+                      Quantidade
+                    </label>
+                    <input
+                      id="quantidade"
+                      type="number"
+                      className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-6">
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      className="text-sm text-neutral-800"
+                      htmlFor="serial"
+                    >
+                      Serial
+                    </label>
+                    <input
+                      id="serial"
+                      type="text"
+                      className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-6">
+                  <div className="flex flex-col space-y-1">
+                    <label className="text-sm text-neutral-800" htmlFor="placa">
+                      Placa
+                    </label>
+                    <input
+                      id="placa"
+                      type="text"
+                      className="border-b bg-neutral-100 transition-all p-2  outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    />
+                  </div>
+                </div>
+
+                <div className="col-span-12">
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      className="text-sm text-neutral-800"
+                      htmlFor="descrição"
+                    >
+                      Descrição
+                    </label>
+                    <textarea
+                      rows={3}
+                      cols={33}
+                      id="descrição"
+                      className="border-b bg-neutral-100 transition-all p-2 outline-none focus:ring focus:ring-blue-600 border-neutral-400"
+                    ></textarea>
+                  </div>
+                </div>
+
+                <div className="col-span-12">
+                  <div className="flex flex-col space-y-1">
+                    <label
+                      className="text-sm text-neutral-800"
+                      htmlFor="devolução"
+                    >
+                      Requer devolução
+                    </label>
+
+                    <div className="flex flex-row gap-4">
+                    <div className="space-x-1">
+                      <input
+                        type="radio"
+                        id="sim"
+                        name="dsim"
+                        value="sim"
+                        checked
+                      />
+                      <label htmlFor="sim">Sim</label>
+                    </div>
+
+                    <div className="space-x-1">
+                      <input
+                        type="radio"
+                        id="não"
+                        name="dnão"
+                        value="não"
+                      />
+                      <label htmlFor="não">Não</label>
+                    </div>
+
+
+
+                    </div>
+          
+
+          
+                  </div>
                 </div>
               </div>
             </section>
