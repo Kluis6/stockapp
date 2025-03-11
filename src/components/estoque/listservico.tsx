@@ -1,12 +1,7 @@
 "use client";
 import { useState } from "react";
-import {
-  BsArrowLeftSquareFill,
-  BsInfoLg,
-  BsPencilFill,
-  BsSearch,
-  BsX,
-} from "react-icons/bs";
+import { BsArrowLeftSquareFill, BsInfoLg, BsSearch, BsX } from "react-icons/bs";
+import RetornoEquip from "./retornoequip";
 
 export default function ListServico() {
   const [modal, setModal] = useState<number>(0);
@@ -62,7 +57,7 @@ export default function ListServico() {
                 <button
                   type="button"
                   className="bg-orange-600 hover:bg-orange-700 active:bg-orange-800 p-2 transition-all"
-                  onClick={() => handleModal(2)}
+                  onClick={() => handleModal(1)}
                 >
                   <BsArrowLeftSquareFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
                 </button>
@@ -74,13 +69,6 @@ export default function ListServico() {
                 >
                   <BsInfoLg className="text-neutral-50 active:scale-75 ease-out duration-300" />
                 </button>
-                <button
-                  type="button"
-                  className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 p-2 transition-all"
-                  onClick={() => handleModal(3)}
-                >
-                  <BsPencilFill className="text-neutral-50 active:scale-75 ease-out duration-300" />
-                </button>
               </td>
             </tr>
           </tbody>
@@ -89,10 +77,10 @@ export default function ListServico() {
 
       {/* Modals */}
 
-      {/* modal exclusão */}
+      {/* modal devolução */}
       {modal === 1 && (
-        <div className="top-0 left-0 absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
-          <div className="bg-neutral-200 shadow flex flex-col gap-4">
+        <div className="top-0 left-0  absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
+          <div className="bg-neutral-100 shadow flex flex-col w-2/5">
             <div className="flex justify-end items-end">
               <button
                 type="button"
@@ -102,56 +90,55 @@ export default function ListServico() {
                 <BsX className=" text-xl text-neutral-800" />
               </button>
             </div>
-            <article className="px-4 text-center">
-              <h4>Excluir esse produto</h4>
-              <p>Tem certeza que deseja excluir o equipamento?</p>
-            </article>
-
-            <div className="flex flex-row">
-              <button className="w-full text-white p-4 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-900 text-sm flex justify-start items-center">
-                Cancelar
-              </button>
-              <button className="w-full text-white p-4 bg-red-700 hover:bg-red-800 active:bg-red-900 text-sm flex justify-start items-center">
-                Remover
-              </button>
-            </div>
+            <RetornoEquip />
           </div>
         </div>
       )}
+      {/* modal informações */}
       {modal === 2 && (
         <div className="top-0 left-0  absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
-          <div className="bg-neutral-200 shadow flex flex-col gap-4 w-2/5">
-            <div className="flex justify-end items-end">
+          <div className="bg-neutral-200 shadow flex flex-col w-2/5">
+            <div className="flex flex-row justify-end items-end">
               <button
                 type="button"
                 className="p-4 hover:bg-neutral-300 "
                 onClick={() => handleModal(0)}
               >
-                <BsX className=" text-xl text-neutral-800" />
+                <BsX className="text-xl text-neutral-800" />
               </button>
             </div>
-            <article className="px-4 pb-4">
-              <div className="flex flex-row gap-2 items-center justify-start">
-                <div className="w-full">
-                  <div className="flex flex-row items-center justify-between ">
-                    <h3 className="font-medium text-neutral-900">
-                      Nome usuário
-                    </h3>
-                    <span className="bg-green-400 px-4 py-1 rounded-2xl">
-                      <p className="font-bold text-xs text-green-800">Ativo</p>
-                    </span>
-                  </div>
-                  <p>Telefone</p>
-                  <p>Função</p>
-                  <p>
-                    Pedidos: <strong>30</strong>{" "}
-                  </p>
-                </div>
+            <article className="px-4 mb-8 space-y-1">
+              <div className="">
+                <h3 className="text-sm font-normal text-neutral-700">
+                  Informações do Equipamento
+                </h3>
               </div>
+
+              <div className="flex flex-row justify-between items-center">
+                <p className="font-medium text-base text-neutral-900">
+                  Nome do equipamento
+                </p>
+                <span className="flex flex-row justify-center items-center bg-green-300 px-2 py-1 rounded-full">
+                  <p className="font-medium text-xs text-green-800">Em uso</p>
+                </span>
+              </div>
+              <p className="text-sm text-neutral-800">Telefone</p>
+              <p className="text-sm text-neutral-800">Função</p>
+              <p className="text-sm text-neutral-800">Data de Atualização:</p>
+              <p className="text-sm text-neutral-800">
+                Quantidade:
+                <strong> 20</strong>
+              </p>
             </article>
+            <div className="flex flex-row">
+              <button className="w-full text-white p-4 bg-neutral-700 hover:bg-neutral-800 active:bg-neutral-900 text-sm flex justify-start items-center">
+                Fechar
+              </button>
+            </div>
           </div>
         </div>
       )}
+
       {modal === 3 && (
         <div className="top-0 left-0 absolute h-screen w-screen bg-black/50 z-10 flex justify-center items-center transition-all">
           <div className="bg-neutral-200 shadow flex flex-col gap-4 w-2/5">
