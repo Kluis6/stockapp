@@ -4,10 +4,9 @@ import React, { useState } from "react";
 import {
   BsBox,
   BsClipboard2,
-  BsFillPersonFill,
   BsGear,
-  BsGearFill,
   BsGrid1X2,
+  BsList,
   BsPerson,
   BsPower,
 } from "react-icons/bs";
@@ -16,15 +15,25 @@ import { usePathname } from "next/navigation";
 export default function Navbar() {
   const [tooltips, setTooltips] = useState<number>(0);
 
+  const [drawer, setDrawer] = useState<boolean>(false);
+
+  const draw = () => {
+    setDrawer(!drawer);
+  };
+
   const pathname = usePathname();
   const handleTooltips = (value: React.SetStateAction<number>) => {
     setTooltips(value);
   };
   return (
     <>
-      <div className="h-screen p-2 z-10 bg-neutral-100 border-e border-neutral-300 absolute top-0 left-0 flex flex-col items-center justify-between">
+      <div
+        className={`h-screen p-2 w-screen md:w-auto z-10  transition-all duration-300 ease-in ${
+          drawer ? "translate-x" : "-translate-x-full md:translate-x-0"
+        } bg-neutral-100 border-e border-neutral-300 absolute top-0 left-0 flex flex-col items-center md:justify-between`}
+      >
         <div>
-          <div></div>;
+          <div className=""></div>;
         </div>
         <nav className="flex flex-col items-center justify-center space-y-1">
           <Link
@@ -130,11 +139,11 @@ export default function Navbar() {
                 Configurações
               </span>
             )}
-            <BsGear  className={`text-base antialiased active:scale-75 ease-out duration-300 ${
-                pathname === "/config"
-                  ? "text-neutral-50"
-                  : "text-neutral-800"
-              }`} />
+            <BsGear
+              className={`text-base antialiased active:scale-75 ease-out duration-300 ${
+                pathname === "/config" ? "text-neutral-50" : "text-neutral-800"
+              }`}
+            />
           </Link>
         </nav>
 
@@ -152,14 +161,17 @@ export default function Navbar() {
           <BsPower className="text-base text-neutral-900 active:scale-75 ease-out duration-300" />
         </button>
       </div>
-      <div className=" z-10 bg-neutral-900 w-screen sticky top-0 right-0 border-b border-neutral-300">
+      <div className=" z-10 bg-neutral-900 w-screen sticky top-0 left-0 right-0 border-b border-neutral-300">
         <div className="flex justify-between items-center h-full px-4 py-3 ">
-          <h1 className="text-white font-bold text-base">
-            Rota atual {pathname}
-          </h1>
+          <h1 className="text-white font-bold text-base">StockApp</h1>
           {/* <RiBox2Line className="text-white text-2xl" /> */}
           <div className="flex items-center">
-            <div className="text-white text-sm font-medium">Nome Usuário</div>
+            <div className="text-white text-sm font-medium hidden md:block">
+              Nome Usuário
+            </div>
+            <button type="button" className="md:hidden" onClick={draw}>
+              <BsList className="text-white text-xl" />
+            </button>
           </div>
         </div>
       </div>

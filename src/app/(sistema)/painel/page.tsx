@@ -2,7 +2,7 @@ import Painelinfo from "@/components/painel/painelinfo";
 
 export default function Painel() {
   return (
-    <div className="w-full ps-[3rem]">
+    <div className="w-full md:ps-[3rem]">
       <div className="bg-neutral-900 py-2 px-4 text-white">
         <h1 className="text-sm font-medium">Painel administrativo</h1>
         <p className="text-xs">
