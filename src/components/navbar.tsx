@@ -111,7 +111,7 @@ export default function Navbar() {
             onMouseOut={() => handleTooltips(0)}
           >
             {tooltips === 4 && (
-              <span className="absolute top-0 -right-[6.5rem] shadow text-white bg-neutral-600 font-sans  p-2 text-xs font-bold ">
+              <span className="absolute top-0 -right-[4.4rem] shadow text-white bg-neutral-600 font-sans  p-2 text-xs font-bold ">
                 Usuários
               </span>
             )}
